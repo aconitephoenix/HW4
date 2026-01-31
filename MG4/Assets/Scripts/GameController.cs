@@ -7,7 +7,9 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
     public Player player { get; private set; }
 
-    private float _timer;
+    [SerializeField] private GameObject _pipePrefab;
+
+    private float _timer = 2.0f;
 
     private void Awake()
     {
