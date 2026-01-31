@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class ScoreUI : MonoBehaviour
+public class UIController : MonoBehaviour
 {
+    [SerializeField] private TMP_Text _scoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,6 @@ public class ScoreUI : MonoBehaviour
 
     public void HandlePointsChanged(int points)
     {
-
+        _scoreText.text = points.ToString();
     }
 }

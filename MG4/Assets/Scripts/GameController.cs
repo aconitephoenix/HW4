@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private GameObject _pipePrefab;
 
-    private float _timer = 2.0f;
+    private float _timer = 4.0f;
 
     private void Awake()
     {
@@ -27,12 +27,23 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpawnPipe();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        _timer -= Time.deltaTime;
+        if (_timer <= 0)
+        {
+            SpawnPipe();
+        }
+    }
+
+    private void SpawnPipe()
+    {
+        GameObject pipe = Instantiate(_pipePrefab);
+        pipe.transform.position += new Vector3(1, Random.Range(1.0f, 3.0f));
+        _timer = 4.0f;
     }
 }

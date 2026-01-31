@@ -7,13 +7,16 @@ public class Player : MonoBehaviour
     [SerializeField] private float _jump;
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private Collider2D _collider;
+    [SerializeField] private AudioSource _audio;
 
     public delegate void IntDelegate(int x);
     public event IntDelegate PointsChanged;
+
+    private int _points;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _points = 0;
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _rigidbody.velocity = new Vector2(0, _jump);
+            _audio.Play();
         }
     }
 
@@ -29,10 +33,11 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Point Zone")
         {
-            PointsChanged?.Invoke(1);
+            _points++;
         } else if (collision.gameObject.tag == "Pipe")
         {
-            PointsChanged?.Invoke(0);
+            _points = 0;
         }
+        PointsChanged?.Invoke(_points);
     }
 }
