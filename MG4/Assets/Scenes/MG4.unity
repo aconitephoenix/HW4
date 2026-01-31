@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 915086793}
   m_Layer: 0
   m_Name: Point Collider
-  m_TagString: Untagged
+  m_TagString: Point Zone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -924,7 +924,7 @@ GameObject:
   - component: {fileID: 1105617465}
   m_Layer: 0
   m_Name: Pipe Map
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -973,7 +973,7 @@ CompositeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1501,7 +1501,7 @@ GameObject:
   - component: {fileID: 1224943751}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1518,6 +1518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9cc540b6e50f0d44b96ac351c922b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pipePrefab: {fileID: 0}
 --- !u!4 &1224943752
 Transform:
   m_ObjectHideFlags: 0
